@@ -6,8 +6,8 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const name = document.querySelector('#name').value
-    const price = document.querySelector('#price').value
-    const quantity = document.querySelector('#quantity').value
+    const price = Number(document.querySelector('#price').value)
+    const quantity = Number(document.querySelector('#quantity').value)
 
     // console.dir(`${name} - ${price}$ x${quantity}`)
 
@@ -28,7 +28,7 @@ const totalCartValue = document.querySelector('#total')
 let cartValue = 0
 
 const updateCartValue = (tovar) => {
-    cartValue += tovar
+    cartValue += Number(tovar)
     // console.log(cartValue)
     console.dir(totalCartValue.textContent)
     totalCartValue.textContent = `Загальна сума: ${cartValue} грн`
